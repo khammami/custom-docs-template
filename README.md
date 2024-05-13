@@ -1,7 +1,8 @@
-# custom-docs-trmplate
+# custom-docs-template
 
 > [!IMPORTANT]  
 > this is just a test for custom quarto theme/format as an extension
+> 
 > Credits: based on [posit-dev/product-doc-theme](https://github.com/posit-dev/product-doc-theme)
 
 Shared theme for Custom product documentation
