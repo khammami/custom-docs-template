@@ -1,0 +1,55 @@
+project:
+  type: custom-docs
+  render:
+    - "*.qmd"
+    - "!changelog.md"
+  
+website:
+  title: 'Custom Documentation <small>Version {{< env PRODUCT_VERSION >}}</small>'
+  page-navigation: true
+  navbar:
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Page 1"
+        file: page-1.qmd
+      - text: "Page 2"
+        file: page-2.qmd
+
+  # Hybrid navigation meant to show some amount of nested sidebar navigation
+  # https://quarto.org/docs/websites/website-navigation.html#hybrid-navigation
+  sidebar:
+    - title: "Page 1"
+      contents:
+        - page-1.qmd
+        - section: Subsection
+          contents:
+            - text: Installation
+              file: install.qmd
+            - text: Duplicate
+              file: install.qmd
+
+    - title: "Page 2"
+      contents:
+        - page-2.qmd
+        - section: Subsection
+          contents:
+            - text: Sharing
+              file: sharing.qmd
+            - text: Duplicate
+              file: sharing.qmd
+
+  page-footer:
+    left: |
+      Copyright &copy; 2000-{{< env CURRENT_YEAR >}} Org. All Rights Reserved.
+    center: |
+      Custom Documentation {{< env PRODUCT_VERSION >}}
+    right:
+      - icon: question-circle-fill
+        aria-label: 'Link'
+        href: "https://khammami.tn/1"
+      - icon: lightbulb-fill
+        aria-label: 'Link'
+        href: "https://khammami.tn/2"
+      - text: "<img alt='Link' src='/_extensions/custom-docs/assets/images/custom-logo-fullcolor.svg' id='footer-right-custom-logo'>"
+        href: "https://khammami.tn/4"
